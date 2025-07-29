@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Shopping Cart</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(107, 5, 59);;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .nav-links li a:hover {
+      color: rgb(107, 5, 59);;
+    }
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+      color: rgb(107, 5, 59);;
+    }
+    .cart-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    img {
+      width: 60px;
+      border-radius: 5px;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+    }
+    button {
+      background-color: rgb(107, 5, 59);;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: rgb(107, 5, 59);;
+    }
+    .total {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .checkout-btn {
+      float: right;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">ShopEase</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="category.html">Women</a></li>
+        <li><a href="category.html">Men</a></li>
+        <li><a href="category.html">Kids</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2>Your Shopping Cart</h2>
+
+  <div class="cart-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+        <tr>
+          <td><img src="assets/images/product1.jpg" alt="Product 1"></td>
+          <td>Floral Kurti</td>
+          <td>2499</td>
+          <td><input type="number" value="1" min="1" onchange="updateTotal(this)"></td>
+          <td class="subtotal">2499</td>
+          <td><button onclick="removeItem(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total">
+      Total: PKR <span id="cart-total">2499</span>
+    </div>
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQs</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="return.html">Return Policy</a>
+    </div>
+    <p>&copy; 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function updateTotal(input) {
+      const row = input.parentElement.parentElement;
+      const price = parseInt(row.cells[2].innerText);
+      const quantity = parseInt(input.value);
+      const subtotal = price * quantity;
+      row.querySelector(".subtotal").innerText = subtotal;
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      const subtotals = document.querySelectorAll(".subtotal");
+      let total = 0;
+      subtotals.forEach(cell => total += parseInt(cell.innerText));
+      document.getElementById("cart-total").innerText = total;
+    }
+
+    function removeItem(button) {
+      const row = button.parentElement.parentElement;
+      row.remove();
+      calculateTotal();
+    }
+  </script>
+</body>
+</html>

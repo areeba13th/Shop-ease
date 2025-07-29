@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids Collection - ShopEase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: #f9f9f9; color: #333; }
+
+    header {
+      background-color: #fff;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #c2185b;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links li a:hover {
+      color: #c2185b;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #c2185b;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 30px 40px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px;
+      position: relative;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+    }
+
+    .product-card p {
+      color: #c2185b;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #a30e46;
+    }
+
+    footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer-links {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">ShopEase</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cart.html">Cart 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Kids' Fashion Collection</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="frock.jpeg" alt="Kids Frock">
+        <h3>Printed Frock</h3>
+        <p>PKR 1,799</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="shalwar kameez.jpeg" alt="Shalwar Kameez">
+        <h3>Shalwar Kameez Set</h3>
+        <p>PKR 2,299</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="winter jacket.jpeg" alt="Kids Jacket">
+        <h3>Winter Jacket</h3>
+        <p>PKR 3,250</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="sporty shoe.jpeg" alt="Kids Shoes">
+        <h3>Sporty Shoes</h3>
+        <p>PKR 1,950</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">FAQs</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <p>&copy; 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ShopEase</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(107, 5, 59);;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .nav-links li a:hover {
+      color: rgb(107, 5, 59);
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: rgb(107, 5, 59);
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: rgb(107, 5, 59);
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: rgb(107, 5, 59);
+    }
+    .extra {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .extra a {
+      color: rgb(107, 5, 59);
+      text-decoration: none;
+    }
+    .extra a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">ShopEase</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="category.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="username">Email or Username</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <div class="extra">
+      <p>Don't have an account? <a href="#">Register</a></p>
+      <p><a href="#">Forgot Password?</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQs</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="return.html">Return Policy</a>
+    </div>
+    <p>&copy; 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if (username === "user" && password === "1234") {
+        alert("Login successful!");
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

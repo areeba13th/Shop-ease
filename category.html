@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop by Category</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: rgb(107, 5, 59);;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    a:hover {
+      color: rgb(107, 5, 59);;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(107, 5, 59);;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .category-layout {
+      display: flex;
+      padding: 20px;
+      gap: 30px;
+    }
+    .filters {
+      width: 250px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .filters h3 {
+      color: rgb(107, 5, 59);;
+      margin-bottom: 10px;
+    }
+    .filter-group {
+      margin-bottom: 15px;
+    }
+    .product-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+    .product-card h3 {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .product-card p {
+      color: #888;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: rgb(107, 5, 59);;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: rgb(107, 5, 59);;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: #fff;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">ShopEase</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="category.html">Women</a></li>
+        <li><a href="category.html">Men</a></li>
+        <li><a href="category.html">Kids</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="products">
+    <h2>Women's Clothing</h2>
+    <div class="category-layout">
+      <aside class="filters">
+        <h3>Filter By</h3>
+        <div class="filter-group">
+          <strong>Size:</strong><br>
+          <label><input type="checkbox"> Small</label><br>
+          <label><input type="checkbox"> Medium</label><br>
+          <label><input type="checkbox"> Large</label>
+        </div>
+        <div class="filter-group">
+          <strong>Price:</strong><br>
+          <label><input type="checkbox"> Under PKR 2,000</label><br>
+          <label><input type="checkbox"> PKR 2,000 - 4,000</label><br>
+          <label><input type="checkbox"> Above PKR 4,000</label>
+        </div>
+        <div class="filter-group">
+          <strong>Color:</strong><br>
+          <label><input type="checkbox"> Black</label><br>
+          <label><input type="checkbox"> White</label><br>
+          <label><input type="checkbox"> Pink</label>
+        </div>
+      </aside>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="floral shirt.jpeg" alt="Product 1">
+          <h3>Floral Kurti</h3>
+          <p>PKR 2,499</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="embroided.jpeg" alt="Product 2">
+          <h3>Elegant Suit</h3>
+          <p>PKR 3,899</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="summer dress.jpeg" alt="Product 3">
+          <h3>Printed Lawn</h3>
+          <p>PKR 1,799</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="top design.jpeg" alt="product 4">
+          <h3>Summer Top</h3>
+          <p>PKR 1,599</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQs</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="return.html">Return Policy</a>
+    </div>
+    <p>&copy; 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll(".product-card button");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const name = btn.parentElement.querySelector("h3").innerText;
+        alert(name + " added to cart!");
+      });
+    });
+  </script>
+</body>
+</html>

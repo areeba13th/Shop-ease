@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - Online Fashion Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #c2185b;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links li a:hover {
+      color: #c2185b;
+    }
+
+    .hero {
+      background: url('images/banner.jpg') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .search-bar {
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #c2185b;
+    }
+
+    .category-grid, .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 0 30px 40px;
+    }
+
+    .category-card, .product-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .category-card:hover, .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-card img, .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .category-card p, .product-card h3 {
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .product-card p {
+      color: #c2185b;
+      font-weight: 600;
+    }
+
+    .product-card button {
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .product-card button:hover {
+      background-color: #a30e46;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: crimson;
+      color: white;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .badge.new {
+      background-color: green;
+    }
+
+    .newsletter {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      max-width: 100%;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .newsletter button {
+      background-color: #c2185b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      background-color: #a30e46;
+    }
+
+    footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer-links {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .search-bar input {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">ShopEase</div>
+      <ul class="nav-links">
+        <ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="women.html">Women</a></li>
+  <li><a href="men.html">Men</a></li>
+  <li><a href="kids.html">Kids</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li><a href="cart.html">Cart 🛒</a></li>
+</ul>
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Elevate Your Style - Shop Now</h1>
+  </section>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search products, brands, categories..." />
+  </div>
+
+  <section class="categories">
+    <h2>Shop By Category</h2>
+    <div class="category-grid">
+      <div class="category-card"><img src="women.jpeg" alt="Women"><p>Women</p></div>
+      <div class="category-card"><img src="men.jpeg" alt="Men"><p>Men</p></div>
+      <div class="category-card"><img src="kids.jpeg" alt="Kids"><p>Kids</p></div>
+      <div class="category-card"><img src="accessories.jpeg" alt="Accessories"><p>Accessories</p></div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="badge new">New</span>
+        <img src="denim.jpeg" alt="Denim Jacket">
+        <h3>Denim Jacket</h3>
+        <p>PKR 4,500</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <span class="badge">Sale</span>
+        <img src="shoe.jpeg" alt="Casual Sneakers">
+        <h3>Casual Sneakers</h3>
+        <p>PKR 3,999</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <span class="badge new">New</span>
+        <img src="bag.jpeg" alt="Leather Handbag">
+        <h3>Leather Handbag</h3>
+        <p>PKR 5,200</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter and get latest offers</p>
+    <input type="email" id="newsletter-email" placeholder="Enter your email" />
+    <button onclick="subscribeEmail()">Subscribe</button>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">FAQs</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <p>&copy; 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function subscribeEmail() {
+      const email = document.getElementById("newsletter-email").value;
+      if (email.trim() === "") {
+        alert("Please enter a valid email.");
+      } else {
+        alert("Thank you for subscribing, " + email + "!");
+        document.getElementById("newsletter-email").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
